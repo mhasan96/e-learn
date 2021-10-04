@@ -1,11 +1,36 @@
-import { Button } from "@mui/material";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import About from "./components/About/About";
+import Home from "./components/Home/Home";
+import NotFound from "./components/NotFound/NotFound";
+import Service from "./components/Service/Service";
+import Enroll from "./Enroll/Enroll";
 
 function App() {
   return (
-    <div className="App">
-      <h2>Welcome to E-Learning Website!!!</h2>
-      <Button variant="contained">Click Me</Button>
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route exact path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/about">
+            <About></About>
+          </Route>
+          <Route path="/service">
+            <Service></Service>
+          </Route>
+          <Router path="/enroll">
+            <Enroll></Enroll>
+          </Router>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
