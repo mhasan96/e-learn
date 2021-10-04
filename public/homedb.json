@@ -1,0 +1,34 @@
+[
+  {
+    "id": 3,
+    "course": "Web Development",
+    "price": 1250,
+    "duration": "30h 38m",
+    "instructor": "Jhankar Mahbub",
+    "img": "https://www.programming-hero.com/blog/assets/images/blog/web-development-from-scratch.png"
+  },
+  {
+    "id": 8,
+    "course": "JS Fundamental",
+    "price": 865,
+    "duration": "17h 50m",
+    "instructor": "Sumit Saha",
+    "img": "https://modernweb.com/app/uploads/2013/10/JavaScript_Fundamentals_Header.jpg"
+  },
+  {
+    "id": 11,
+    "course": "Game Development",
+    "price": 1650,
+    "duration": "45h 36m",
+    "instructor": "Munna",
+    "img": "https://blog.potenzaglobalsolutions.com/wp-content/uploads/2021/06/5-Rarely-Known-Advantages-And-Disadvantages-Of-Unity-Game-Development.jpg"
+  },
+  {
+    "id": 7,
+    "course": "Intro to Robotics",
+    "price": 985,
+    "duration": "20h 56m",
+    "instructor": "Mehedi Hasan",
+    "img": "https://i.kym-cdn.com/entries/icons/facebook/000/016/956/10042483-funny-robot-sit-with-headphones.jpg"
+  }
+]

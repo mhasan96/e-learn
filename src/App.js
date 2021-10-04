@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
+import NavBar from "./components/NavBar/NavBar";
 import NotFound from "./components/NotFound/NotFound";
 import Service from "./components/Service/Service";
 import Enroll from "./Enroll/Enroll";
@@ -10,6 +12,7 @@ function App() {
   return (
     <div>
       <Router>
+        <NavBar></NavBar>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -30,6 +33,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );
