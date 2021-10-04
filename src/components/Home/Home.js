@@ -13,6 +13,7 @@ import { NavLink } from "react-router-dom";
 import img from "../../../src/images/e-learning.png";
 import "./Home.css";
 
+//Fetch the Products from Json File
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -67,6 +68,7 @@ const Home = () => {
         <h1 className="middle-home">Our Top Rated Course</h1>
       </div>
       <div>
+        {/* Mapping Products and Showing them to 4 coloums */}
         <Grid container spacing={3}>
           {products.map((product) => (
             <Grid item md={3} key={product?.id}>

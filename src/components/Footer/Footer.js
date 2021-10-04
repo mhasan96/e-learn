@@ -2,6 +2,7 @@ import { AppBar, Container, Toolbar, Typography } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
+  // This is Footer
   return (
     <div>
       <AppBar position="static" color="primary">

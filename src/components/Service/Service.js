@@ -13,6 +13,7 @@ import { NavLink } from "react-router-dom";
 import "./Service.css";
 // import useProducts from "../../Hooks/useProducts";
 
+//Getting all the products from JSON file
 const Service = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -27,6 +28,7 @@ const Service = () => {
         <br />
       </div>
       <div>
+        {/* Showing the file */}
         <Grid container spacing={3} style={{ paddingLeft: "10px" }}>
           {products.map((product) => (
             <Grid key={product?.id} item md={3}>

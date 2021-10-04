@@ -13,7 +13,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme();
-
+//This is an Enrollment Form
 export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();

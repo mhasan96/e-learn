@@ -4,6 +4,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import img from "../../images/about.jpg";
 
+//This is an About Page which Contains Compnay Informations
 const About = () => {
   return (
     <div style={{ marginBottom: "70px" }}>
