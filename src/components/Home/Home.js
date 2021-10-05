@@ -16,6 +16,8 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import img from "../../../src/images/e-learning.png";
+import img2 from "../../../src/images/hat.png";
+
 import "./Home.css";
 
 //Fetch the Products from Json File
@@ -71,7 +73,8 @@ const Home = () => {
         <Grid container spacing={2}>
           <Grid item xs={4}>
             <div className="home-intro">
-              <h1>
+              <img style={{ height: "100px" }} src={img2} alt="" />
+              <h1 style={{ marginTop: "-8px" }}>
                 <span style={{ color: "rgb(0, 119, 255)" }}>E-</span>
                 Learning
               </h1>
