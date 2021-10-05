@@ -4,6 +4,11 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   Grid,
   Typography,
 } from "@mui/material";
@@ -15,6 +20,19 @@ import "./Home.css";
 
 //Fetch the Products from Json File
 const Home = () => {
+  //Trailer Video Modal
+  //*************
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  //Fetch the Products from Json File
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("/homedb.json")
@@ -23,6 +41,32 @@ const Home = () => {
   }, []);
   return (
     <div style={{ marginBottom: "50px" }}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Watch Trail Video"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Cxf5sOXG0w0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
       <Box sx={{ flexGrow: 1 }} m={2} pt={3}>
         <Grid container spacing={2}>
           <Grid item xs={4}>
@@ -69,10 +113,10 @@ const Home = () => {
       </div>
       <div>
         {/* Mapping Products and Showing them to 4 coloums */}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} style={{ paddingLeft: "10px" }}>
           {products.map((product) => (
-            <Grid item md={3} key={product?.id}>
-              <Card sx={{ maxWidth: 345 }}>
+            <Grid key={product?.id} item md={3}>
+              <Card sx={{ maxWidth: 345, boxShadow: 3, borderRadius: 3 }}>
                 <CardMedia
                   component="img"
                   height="140"
@@ -88,17 +132,28 @@ const Home = () => {
                     <hr />
                   </Typography>
                   <Typography gutterBottom variant="h6" component="div">
-                    Price:$ {product?.price}
+                    Price: ${product?.price}
                     <hr />
                   </Typography>
                   Duration: {product?.duration}
                 </CardContent>
-                <CardActions>
-                  <NavLink style={{ textDecoration: "none" }} to="/enroll">
+                <CardActions style={{ marginBottom: "15px" }}>
+                  <NavLink
+                    style={{ textDecoration: "none", marginRight: "10px" }}
+                    to="/enroll"
+                  >
                     {" "}
-                    <Button size="small">Enroll</Button>{" "}
+                    <Button variant="outlined" size="small">
+                      Enroll
+                    </Button>{" "}
                   </NavLink>
-                  <Button size="small">Learn More</Button>
+                  <Button
+                    onClick={handleClickOpen}
+                    size="small"
+                    variant="outlined"
+                  >
+                    Trail Now
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>
